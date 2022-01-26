@@ -1,16 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@300;400;600&display=swap');
+
+*,
+::after,
+::before {
+  margin: 0;
+  box-sizing: border-box;
+}
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Poppins', 'Lilita One', 'cursive', sans-serif;
+}
+img {
+  width: 100%;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
-* {
-  box-sizing: border-box;
+.text_shadow {
+  /* position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 15vh; */
+  text-shadow: 0 0 1px black, 0 0 1px black, 
+              0 0 1px black, 0 0 1px black,
+              0 0 1px black, 0 0 1px black;
 }
+.hero__section {
+    position:relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    overflow-x: hidden;
+    z-index: 0;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+  }
+  .home__info-overlay {
+    overflow: hidden;
+  }
+  
+  .home__info-img {
+    width: 145px;
+    transition: .3s;
+  }
+  
+  .home__info-img:hover {
+    transform: scale(1.1);
+  }
+  .home__icon {
+    animation: bounce .8s infinite alternate both;
+  }
+  @keyframes bounce {
+    from {transform: translateY(5px);}
+    To {transform: translateY(-5px);}
+  }

@@ -1,11 +1,25 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, MenuButton, MenuList, MenuItem, useColorModeValue, useColorMode, Switch, Flex, Box, Button, Spacer, IconButton } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, useColorMode, Switch, Flex, Box, Button, Spacer, IconButton } from '@chakra-ui/react'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FcHome, FcAbout } from 'react-icons/fc';
 import { BsSearch } from 'react-icons/bs';
 import { FiKey } from 'react-icons/fi';
+
+
+
+export const Btn = ({link, linkName}) => (
+    <Link href={link} passHref>
+        <Button
+            as="a"
+            mr='2rem'
+            variant="ghost"
+            aria-label="Home">
+            {linkName}
+        </Button>
+    </Link>
+);
 
 
 
@@ -29,19 +43,19 @@ const Navbar = () => {
                 display={['flex', 'flex', 'none', 'none']}>
                 <Menu>
                     <MenuButton as={IconButton} icon={menu? <GiHamburgerMenu /> : <AiOutlineClose />} 
-                       onClick={()=> setMenu(!menu)} variant='outline' color='green' />
-                    <MenuList>
+                       onClick={()=> setMenu(!menu)} variant='outline' color='blue.400' />
+                    <MenuList h='full'>
                     <Link href='/' passHref>
-                        <MenuItem icon={<FcHome />}>Home</MenuItem>
+                        <MenuItem onClick={()=> setMenu(!menu)} icon={<FcHome />}>Home</MenuItem>
                     </Link>
                     <Link href='/search' passHref>
-                        <MenuItem icon={<BsSearch />}>Search</MenuItem>
+                        <MenuItem onClick={()=> setMenu(!menu)} icon={<BsSearch />}>Search</MenuItem>
                     </Link>
                     <Link href='/search?purpose=for-sale' passHref>
-                        <MenuItem icon={<FcAbout />}>Buy Property</MenuItem>
+                        <MenuItem onClick={()=> setMenu(!menu)} icon={<FcAbout />}>Buy Property</MenuItem>
                     </Link>
                     <Link href='/search?purpose=for-rent' passHref>
-                        <MenuItem icon={<FiKey />}>Rent Property</MenuItem>
+                        <MenuItem onClick={()=> setMenu(!menu)} icon={<FiKey />}>Rent Property</MenuItem>
                     </Link>
                     </MenuList>
                 </Menu>
@@ -49,7 +63,7 @@ const Navbar = () => {
 
         
          {/* [ Desktop ] */}
-            <Box fontSize={["2xl", "3xl"]}color="blue.400" fontWeight="bold">
+            <Box fontSize={["2xl", "3xl"]} color="blue.400" fontWeight="bold">
                 <Link href="/">
                     HomeNg
                 </Link>
@@ -62,51 +76,19 @@ const Navbar = () => {
                 display={['none', 'none', 'flex','flex']}
                 justifyContent='space-evenly'>
 
-                <Link href="/" passHref>
-                    <Button
-                        as="a"
-                        mr='2rem'
-                        variant="ghost"
-                        aria-label="Home">
-                        Home
-                    </Button>
-                </Link>
+                <Btn link="/" linkName="Home" />
 
-                <Link href="/search?purpose=for-sale" passHref>
-                    <Button
-                        as="a"
-                        mr='2rem'
-                        variant="ghost"
-                        aria-label="for-sale">
-                        Buy
-                    </Button>
-                </Link>
+                <Btn link="/search?purpose=for-sale" linkName="Buy" />
 
-                <Link href="/search?purpose=for-rent" passHref>
-                    <Button
-                        as="a"
-                        mr='2rem'
-                        variant="ghost"
-                        aria-label="for-rent">
-                        Rent
-                    </Button>
-                </Link>
+                <Btn link="/search?purpose=for-rent" linkName="Rent" />
 
-                <Link href='/search' passHref>
-                    <Button
-                        as="a"
-                        mr='2rem'
-                        variant="ghost"
-                        aria-label="search">
-                        Search
-                    </Button>
-                </Link>
+                <Btn link="/search" linkName="Search" />
                 
             </Flex>
           {/* [ DarkMode Switch ] */}
           <Box>
             <Switch
-                color="green"
+                color="yellow"
                 isChecked={isDark}
                 onChange={toggleColorMode} />
         </Box>

@@ -31,7 +31,7 @@ function Hero() {
             </Button>
         </Box>
         <Box display='flex' borderRadius='lg' bgColor='#1a202c' columnGap='.5rem' pos='absolute' 
-            right='1.5rem' color='white' bottom='2rem' padding='1rem' w='228px'>
+            right='1rem' color='white' bottom='3rem' padding='1rem' w='228px'>
             <Text display='block' margin='1.5' fontSize='sm'>Your comfort is our priority.</Text> 
             <Box className='home__info-overlay'>
             <Image src={BannerImage} alt='banner' className='home__info-img' />

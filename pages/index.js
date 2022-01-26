@@ -1,6 +1,6 @@
 import { Flex, Box } from '@chakra-ui/react';
 import Property from '../components/Property';
-import { baseUrl, fetchApi } from '../utils/fetchApi';
+import { baseUrl, fetchApi } from './api/fetchApi';
 import Banner from '../components/Banner';
 import Hero from '../components/Hero';
 

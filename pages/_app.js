@@ -1,11 +1,11 @@
 import '../styles/globals.css';
 import Head from 'next/head';
 import { ChakraProvider } from '@chakra-ui/react';
-
 import Layout from '../components/Layout';
 import nProgress from 'nprogress';
 import Router from 'next/router';
 import nprogress from 'nprogress';
+
 
 
 function MyApp({ Component, pageProps }) {

@@ -44,7 +44,7 @@ const Navbar = () => {
                 <Menu>
                     <MenuButton as={IconButton} icon={menu? <GiHamburgerMenu /> : <AiOutlineClose />} 
                        onClick={()=> setMenu(!menu)} variant='outline' color='blue.400' />
-                    <MenuList h='full'>
+                    <MenuList>
                     <Link href='/' passHref>
                         <MenuItem onClick={()=> setMenu(!menu)} icon={<FcHome />}>Home</MenuItem>
                     </Link>

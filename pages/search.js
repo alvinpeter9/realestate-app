@@ -18,6 +18,7 @@ const Search = ({ properties }) => {
         onClick={() => setSearchFilters(!searchFilters)}
         cursor='pointer'
         bg='gray.100'
+        color='black'
         borderBottom='1px'
         borderColor='gray.200'
         p='2'
